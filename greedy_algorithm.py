@@ -10,26 +10,26 @@ import operator, logging, time
 logging.basicConfig(format='%(levelname)s : %(message)s', level=logging.INFO)
 
 def greedy_algorithm(data_file):
-    n, m, w, v = load_data(data_file)
+    n, m, w, p = load_data(data_file)
 
     # 计算每个物体的性价比并按照由大到小的顺序进行排序
     ppr = {}
     for i in range(1, n+1):
-        ppr[i] = v[i] / w[i]
+        ppr[i] = p[i] / w[i]
     sorted_ppr = sorted(ppr.items(), key=operator.itemgetter(1), reverse=True)
 
     logging.info("一共有%d个物品，背包重量为%d" %(n, m))
 
     # 每次贪心地装入性价比最高的物体，直到装不下为止
-    current_w, current_v, x = 0, 0, []
+    current_w, current_p, x = 0, 0, []
     for (k, ppr) in sorted_ppr:
-        logging.debug("Object %d:  w: %d  v: %d  ppr: %.4f" %(k, w[k], v[k], ppr))
+        logging.debug("Object %d:  w: %d  p: %d  ppr: %.4f" %(k, w[k], p[k], ppr))
         if current_w + w[k] <= m:
             current_w += w[k]
-            current_v += v[k]
+            current_p += p[k]
             x.append(k)
 
-    return x, current_v
+    return x, current_p
 
 if __name__ == '__main__':
     begin = time.time()
