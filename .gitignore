@@ -1,2 +1,8 @@
 
-*.pyc
+# ingore everything
+*
+
+# add all the file that you don't want miss
+!*.py
+!*.md
+!*.ipynb

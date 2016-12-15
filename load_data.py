@@ -7,17 +7,17 @@
 # 第三行：物体i的价值（空格分割）
 # 
 # 返回值：
-# 物体的个数 N、背包的容量 C
-# 物体的重量 weight[]、物体的价值 value[]
+# 物体的个数 n、背包的容量 m
+# 物体的重量 w[]、物体的价值 v[]
 
 def load_data(file_name):
     with open(file_name) as f_read:
         temp_line = f_read.readline().split()
-        N, C = int(temp_line[0]), float(temp_line[1])
-        weight = [float(item) for item in f_read.readline().split()]
-        value = [float(item) for item in f_read.readline().split()]
+        n, m = int(temp_line[0]), int(temp_line[1])
+        w = [int(item) for item in f_read.readline().split()]
+        v = [int(item) for item in f_read.readline().split()]
 
-        return N, C, weight, value
+        return n, m, w, v
 
 if __name__ == '__main__':
     file_name = 'data'
