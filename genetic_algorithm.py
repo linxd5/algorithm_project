@@ -135,7 +135,6 @@ def genetic_algorithm():
         mutation()
 
         temp_max, temp_num = max_fitness()
-        print(temp_max)
     
     temp_max, temp_num = max_fitness()
 
@@ -147,7 +146,7 @@ if __name__ == '__main__':
     begin = time.time()
     temp_max, temp_indi = genetic_algorithm()
     end = time.time()
-    print('++++ Max: ', temp_max)
-    print('Using %.4fs' %(end-begin))
+    logging.info('装入背包的最大价值为: %d' %temp_max)
+    logging.info('Using %.4fs' %(end-begin))
 
 

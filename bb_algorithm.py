@@ -63,8 +63,8 @@ if __name__ == '__main__':
     data_file = 'data'
     p, s1 = bb_algorithm(data_file)
     end = time.time()
-    print('++++ Max: ', p)
+    logging.info('装入背包的总价值为: %d' %p)
     # print('++++ s1: ', s1)
-    print('Using %.4fs' %(end-begin))
+    logging.info('Using %.4fs' %(end-begin))
 
 

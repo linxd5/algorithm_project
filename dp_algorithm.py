@@ -38,7 +38,7 @@ if __name__ == '__main__':
     data_file = 'data'
     optp, max = dp_algorithm(data_file)
     end = time.time()
-    print('++++ Max: ', max)
-    print('Using %.4fs' %(end-begin))
+    logging.info('装入背包的总价值为: %d' %max)
+    logging.info('Using %.4fs' %(end-begin))
 
 
